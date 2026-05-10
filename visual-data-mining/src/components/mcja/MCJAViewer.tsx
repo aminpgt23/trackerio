@@ -67,7 +67,7 @@ export const MCJAViewer: React.FC = () => {
   return (
     <div className="mcja-viewer">
       <div className="mcja-header">
-        <h1>📋 MCJA Documentation</h1>
+        <h1><span className="flex items-center gap-2"><DocumentIcon className="w-6 h-6" /> MCJA Documentation</span></h1>
         <p className="mcja-subtitle">
           Menu/Widget, Command/Control, Job/Function, Action/Output - Complete Auto-Generated Documentation
         </p>
@@ -103,13 +103,13 @@ export const MCJAViewer: React.FC = () => {
             className={viewMode === 'table' ? 'active' : ''}
             onClick={() => setViewMode('table')}
           >
-            📊 Table View
+            TableIcon Table View
           </button>
           <button
             className={viewMode === 'widgets' ? 'active' : ''}
             onClick={() => setViewMode('widgets')}
           >
-            🧩 Widgets View
+            <span className="flex items-center gap-2"><GridIcon className="w-5 h-5" /> Widgets View</span>
           </button>
         </div>
       </div>
