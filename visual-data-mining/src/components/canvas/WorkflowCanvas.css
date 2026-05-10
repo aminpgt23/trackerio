@@ -1,0 +1,91 @@
+/* Workflow Canvas Styles */
+
+.workflow-canvas {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  background: #fafafa;
+}
+
+.react-flow__container {
+  background: #fafafa;
+}
+
+.react-flow__node {
+  cursor: grab;
+}
+
+.react-flow__node:active {
+  cursor: grabbing;
+}
+
+.react-flow__edge-path {
+  stroke-linecap: round;
+}
+
+.react-flow__controls {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.react-flow__controls-button {
+  border: none;
+  background: white;
+  padding: 8px;
+}
+
+.react-flow__controls-button:hover {
+  background: #f5f5f5;
+}
+
+.react-flow__minimap {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.react-flow__background {
+  color: #e0e0e0;
+}
+
+/* Custom node selection outline */
+.react-flow__node.selected .widget-node {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+/* Connection line styling */
+.react-flow__connection-line {
+  stroke: #3498db;
+  stroke-width: 2;
+}
+
+.react-flow__connection-line .animated {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+}
+
+/* Empty state */
+.workflow-canvas:has(.react-flow__nodes:empty) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.workflow-canvas:has(.react-flow__nodes:empty)::after {
+  content: '📤 Add widgets from the catalog to start building your workflow';
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  border: 2px dashed #bdc3c7;
+}
