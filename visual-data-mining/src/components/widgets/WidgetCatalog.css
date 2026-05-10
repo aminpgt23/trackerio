@@ -88,7 +88,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px;
+  padding: 10px;
   background: white;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -104,8 +104,14 @@
 }
 
 .widget-item-icon {
-  font-size: 1.5rem;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.widget-item-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 .widget-item-info {

@@ -93,7 +93,7 @@ export const WidgetCatalog: React.FC<WidgetCatalogProps> = ({ onAddWidget }) => 
               title={widget.description}
             >
               <div className="widget-item-icon">
-                {WidgetIcon ? <WidgetIcon className="w-5 h-5" /> : '📦'}
+                {WidgetIcon ? <WidgetIcon /> : '📦'}
               </div>
               <div className="widget-item-info">
                 <span className="widget-item-name">{widget.menu}</span>

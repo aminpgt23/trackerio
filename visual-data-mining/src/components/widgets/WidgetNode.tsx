@@ -32,7 +32,7 @@ const WidgetNode: React.FC<NodeProps<WidgetNodeData>> = ({ data, selected }) => 
       {/* Node Header */}
       <div className="widget-header">
         <span className="widget-icon">
-          {IconComponent ? <IconComponent className="w-6 h-6" /> : (data.icon || '📦')}
+          {IconComponent ? <IconComponent /> : (data.icon || '📦')}
         </span>
         <div className="widget-title">
           <span className="widget-name">{data.label}</span>
