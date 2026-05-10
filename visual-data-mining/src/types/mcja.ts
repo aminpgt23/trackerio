@@ -55,8 +55,8 @@ export interface WidgetMCJAMetadata {
     name: string;
     type: string;
   }[];
-  /** Icon representation (SVG path or emoji) */
-  icon?: string;
+  /** Icon component */
+  icon?: React.FC<{ className?: string }>;
 }
 
 /**

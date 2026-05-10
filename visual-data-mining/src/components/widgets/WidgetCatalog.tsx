@@ -4,6 +4,7 @@
 
 import React, { useState } from 'react';
 import { getAllWidgets, getWidgetsByCategory } from '../../data/widgetRegistry';
+import { CubeIcon } from '../../components/icons';
 import type { WidgetMCJAMetadata } from '../../types/mcja';
 import './WidgetCatalog.css';
 
