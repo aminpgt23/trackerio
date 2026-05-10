@@ -75,3 +75,8 @@ export interface MCJARow {
   jobDescription: string;
   actionOutput: string;
 }
+
+/**
+ * Icon component type for TypeScript
+ */
+export type IconType = React.FC<{ className?: string }>;
