@@ -9,12 +9,13 @@ import ReactFlow, {
   Connection,
   Controls,
   Background,
+  BackgroundVariant,
   MiniMap,
   NodeTypes,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { v4 as uuidv4 } from 'uuid';
-import WidgetNode, { WidgetNodeData } from '../../widgets/WidgetNode';
+import WidgetNode, { WidgetNodeData } from '../widgets/WidgetNode';
 import { getWidgetByType } from '../../data/widgetRegistry';
 import { useWorkflowStore } from '../../store/workflowStore';
 import './WorkflowCanvas.css';
@@ -113,7 +114,7 @@ export const WorkflowCanvas: React.FC<WorkflowCanvasProps> = ({ onAddWidgetFromC
           }}
           maskColor="rgba(0, 0, 0, 0.1)"
         />
-        <Background variant="dots" gap={20} size={1} color="#ddd" />
+        <Background variant={BackgroundVariant.Dots} gap={20} size={1} color="#ddd" />
       </ReactFlow>
     </div>
   );

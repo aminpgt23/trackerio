@@ -1,73 +1,165 @@
-# React + TypeScript + Vite
+# Visual Data Mining with MCJA Auto-Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi web **Visual Data Mining** yang terinspirasi dari Orange Data Mining, dilengkapi dengan fitur **MCJA Auto-Documenter** yang secara otomatis menghasilkan dokumentasi lengkap untuk semua widget.
 
-Currently, two official plugins are available:
+## 🚀 Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Prerequisites
+- Node.js 18+ dan npm
+- Browser modern (Chrome, Firefox, Edge)
 
-## React Compiler
+### Instalasi & Menjalankan
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# 1. Masuk ke direktori proyek
+cd visual-data-mining
 
-## Expanding the ESLint configuration
+# 2. Install dependencies (jika belum)
+npm install
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# 3. Jalankan development server
+npm run dev
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 4. Buka browser di http://localhost:5173
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Build untuk Production
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Build aplikasi
+npm run build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Preview hasil build
+npm run preview
 ```
+
+## 📋 Fitur Utama
+
+### 1. Kanvas Pemrograman Visual
+- Drag & drop widget dari katalog ke kanvas
+- Hubungkan widget melalui saluran (link) untuk membangun alur analisis
+- Kategori widget: Data, Visualize, Model, Evaluate, Unsupervised
+- MiniMap untuk navigasi workflow besar
+
+### 2. Widget Catalog
+- Browse semua widget yang tersedia berdasarkan kategori
+- Search widget berdasarkan nama atau deskripsi
+- Klik untuk menambahkan widget ke kanvas
+
+### 3. MCJA Auto-Documentation Viewer
+- **M**enu/**W**idget: Nama dan kategori widget
+- **C**ommand/**C**ontrol: Semua kontrol (tombol, dropdown, slider, dll.)
+- **J**ob/**F**unction: Deskripsi fungsi setiap kontrol
+- **A**ction/**O**utput: Hasil/output yang dihasilkan
+
+#### Cara Mengakses MCJA Viewer:
+1. Klik tombol "📋 MCJA Documentation" di header
+2. Filter berdasarkan kategori (All, Data, Visualize, Model, Evaluate, Unsupervised)
+3. Cari widget atau command spesifik
+4. Toggle antara Table View dan Widgets View
+
+## 🏗️ Arsitektur
+
+```
+visual-data-mining/
+├── src/
+│   ├── components/
+│   │   ├── canvas/          # WorkflowCanvas (ReactFlow)
+│   │   ├── mcja/            # MCJAViewer (Dokumentasi)
+│   │   └── widgets/         # WidgetNode, WidgetCatalog
+│   ├── data/
+│   │   └── widgetRegistry.ts # Registry metadata MCJA semua widget
+│   ├── store/
+│   │   └── workflowStore.ts  # Zustand state management
+│   ├── types/
+│   │   └── mcja.ts           # TypeScript interfaces MCJA
+│   ├── App.tsx               # Main component
+│   └── main.tsx              # Entry point
+├── package.json
+└── README.md
+```
+
+## 🧩 Widget yang Tersedia
+
+### Data Category
+- **File Reader**: Load CSV, Excel, JSON files
+- **Data Table**: Display and inspect data
+- **Data Sampler**: Random/fixed interval sampling
+
+### Visualize Category
+- **Scatter Plot**: 2D relationship visualization
+- **Line Chart**: Time series trends
+- **Bar Chart**: Categorical comparisons
+
+### Model Category
+- **Linear Regression**: Continuous prediction
+- **Logistic Regression**: Binary classification
+- **Decision Tree**: Tree-based classification/regression
+
+### Evaluate Category
+- **Confusion Matrix**: Classification performance
+- **ROC Analysis**: Model evaluation curves
+- **Cross Validation**: K-fold validation
+
+### Unsupervised Category
+- **K-Means**: Clustering algorithm
+- **Hierarchical Clustering**: Dendrogram visualization
+- **PCA**: Dimensionality reduction
+
+## 🔧 Menambah Widget Baru
+
+Untuk menambah widget baru dengan dokumentasi MCJA otomatis:
+
+1. **Tambahkan metadata di `src/data/widgetRegistry.ts`:**
+
+```typescript
+'newWidget': {
+  menu: 'New Widget Name',
+  category: 'Data', // atau Visualize, Model, Evaluate, Unsupervised
+  type: 'newWidget',
+  description: 'Description of what this widget does',
+  icon: '🆕',
+  inputs: [{ id: 'data', name: 'Data', type: 'DataTable' }],
+  outputs: [{ id: 'result', name: 'Result', type: 'DataTable' }],
+  commands: [
+    {
+      id: 'param1',
+      name: 'Parameter 1',
+      type: 'input',
+      job: 'Description of what this parameter does',
+      action: 'Output/effect when this is changed',
+      defaultValue: 'default'
+    },
+    {
+      id: 'run_btn',
+      name: 'Run',
+      type: 'button',
+      job: 'Execute the widget operation',
+      action: 'Produces output data/signal'
+    }
+  ]
+}
+```
+
+2. **Dokumentasi MCJA otomatis diperbarui!**
+   - MCJA Viewer akan langsung menampilkan widget baru
+   - Tidak perlu modifikasi manual pada dokumentasi
+
+## 📊 Statistik Dokumentasi
+
+Aplikasi ini memiliki dokumentasi MCJA lengkap untuk:
+- **15+ Widget** across 5 categories
+- **100+ Commands** dengan job dan action descriptions
+- **100% Auto-generated** dari widget registry
+
+## 🛠️ Teknologi
+
+- **Frontend**: React 19 + TypeScript
+- **Canvas**: React Flow untuk visual workflow
+- **State Management**: Zustand
+- **Build Tool**: Vite
+- **Styling**: CSS Modules
+
+## 📝 License
+
+MIT License - Inspired by Orange Data Mining (https://orangedatamining.com)
