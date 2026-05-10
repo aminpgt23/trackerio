@@ -7,6 +7,73 @@ import { WidgetMCJAMetadata } from '../types/mcja';
 import * as Icons from '../components/icons';
 import type { IconType } from '../types/mcja';
 
+// Map icon names to their component functions
+const iconMap: Record<string, IconType> = {
+  'FileIcon': Icons.FileIcon,
+  'TableIcon': Icons.TableIcon,
+  'SamplerIcon': Icons.SamplerIcon,
+  'ExcelIcon': Icons.ExcelIcon,
+  'SQLIcon': Icons.SQLIcon,
+  'FilterIcon': Icons.FilterIcon,
+  'PreprocessIcon': Icons.PreprocessIcon,
+  'MergeIcon': Icons.MergeIcon,
+  'SelectRowsIcon': Icons.SelectRowsIcon,
+  'SelectColumnsIcon': Icons.SelectColumnsIcon,
+  'ImputeIcon': Icons.ImputeIcon,
+  'PurgeIcon': Icons.PurgeIcon,
+  'DiscretizeIcon': Icons.DiscretizeIcon,
+  'ContinuizeIcon': Icons.ContinuizeIcon,
+  'RankIcon': Icons.RankIcon,
+  'ScatterPlotIcon': Icons.ScatterPlotIcon,
+  'LineChartIcon': Icons.LineChartIcon,
+  'BarChartIcon': Icons.BarChartIcon,
+  'BoxPlotIcon': Icons.BoxPlotIcon,
+  'HeatMapIcon': Icons.HeatMapIcon,
+  'HistogramIcon': Icons.HistogramIcon,
+  'MosaicIcon': Icons.MosaicIcon,
+  'PieChartIcon': Icons.PieChartIcon,
+  'SieveDiagramIcon': Icons.SieveDiagramIcon,
+  'ViolinPlotIcon': Icons.ViolinPlotIcon,
+  'DistributionsIcon': Icons.DistributionsIcon,
+  'LinearRegressionIcon': Icons.LinearRegressionIcon,
+  'LogisticRegressionIcon': Icons.LogisticRegressionIcon,
+  'DecisionTreeIcon': Icons.DecisionTreeIcon,
+  'RandomForestIcon': Icons.RandomForestIcon,
+  'SVMIcon': Icons.SVMIcon,
+  'NeuralNetworkIcon': Icons.NeuralNetworkIcon,
+  'NaiveBayesIcon': Icons.NaiveBayesIcon,
+  'KNNIcon': Icons.KNNIcon,
+  'AdaBoostIcon': Icons.AdaBoostIcon,
+  'GradientBoostingIcon': Icons.GradientBoostingIcon,
+  'XGBoostIcon': Icons.XGBoostIcon,
+  'TestScoreIcon': Icons.TestScoreIcon,
+  'ConfusionMatrixIcon': Icons.ConfusionMatrixIcon,
+  'ROCAnalysisIcon': Icons.ROCAnalysisIcon,
+  'PrecisionRecallIcon': Icons.PrecisionRecallIcon,
+  'CalibrationPlotIcon': Icons.CalibrationPlotIcon,
+  'LiftCurveIcon': Icons.LiftCurveIcon,
+  'PredictionResultsIcon': Icons.PredictionResultsIcon,
+  'SensitivitySpecificityIcon': Icons.SensitivitySpecificityIcon,
+  'KMeansIcon': Icons.KMeansIcon,
+  'HierarchicalClusteringIcon': Icons.HierarchicalClusteringIcon,
+  'SpectralClusteringIcon': Icons.SpectralClusteringIcon,
+  'PCAIcon': Icons.PCAIcon,
+  'MDSIcon': Icons.MDSIcon,
+  'tSNEIcon': Icons.tSNEIcon,
+  'GaussianMixtureIcon': Icons.GaussianMixtureIcon,
+  'CorrelationIcon': Icons.CorrelationIcon,
+  'SilhouettePlotIcon': Icons.SilhouettePlotIcon,
+  'DBSCANIcon': Icons.DBSCANIcon,
+};
+
+/**
+ * Get icon component by name
+ */
+export const getIconByName = (iconName?: string): IconType | undefined => {
+  if (!iconName) return undefined;
+  return iconMap[iconName];
+};
+
 /**
  * Complete registry of all available widgets with their MCJA metadata
  * Every widget MUST have complete metadata here for auto-documentation
@@ -19,7 +86,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Data',
     type: 'fileReader',
     description: 'Load data from CSV, Excel, or other file formats into the workflow',
-    icon: Icons.FileIcon,
+    icon: 'FileIcon',
     inputs: [],
     outputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
@@ -81,7 +148,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Data',
     type: 'dataTable',
     description: 'Display and inspect data in a tabular format',
-    icon: Icons.TableIcon,
+    icon: 'TableIcon',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -130,7 +197,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Data',
     type: 'dataSampler',
     description: 'Sample a subset of data rows randomly or by fixed interval',
-    icon: Icons.SamplerIcon,
+    icon: 'SamplerIcon',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -191,7 +258,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Visualize',
     type: 'scatterPlot',
     description: 'Create scatter plots to visualize relationships between two variables',
-    icon: Icons.ScatterPlotIcon,
+    icon: 'ScatterPlotIcon',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -283,7 +350,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Visualize',
     type: 'lineChart',
     description: 'Create line charts to show trends over time or sequence',
-    icon: Icons.LineChartIcon,
+    icon: 'LineChartIcon',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -341,7 +408,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Visualize',
     type: 'barChart',
     description: 'Create bar charts for categorical comparisons',
-    icon: Icons.BarChartIcon,
+    icon: 'BarChartIcon',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -400,7 +467,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Model',
     type: 'linearRegression',
     description: 'Fit a linear regression model to predict continuous target variable',
-    icon: Icons.LinearRegressionIcon,
+    icon: 'LinearRegressionIcon',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' },
       { id: 'preprocessor', name: 'Preprocessor', type: 'Preprocessor',  }
@@ -482,7 +549,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Model',
     type: 'logisticRegression',
     description: 'Fit a logistic regression model for binary classification',
-    icon: Icons.LogisticRegressionIcon,
+    icon: 'LogisticRegressionIcon',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -564,7 +631,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Model',
     type: 'decisionTree',
     description: 'Build a decision tree classifier or regressor',
-    icon: Icons.DecisionTreeIcon,
+    icon: 'DecisionTreeIcon',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -644,7 +711,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Evaluate',
     type: 'confusionMatrix',
     description: 'Visualize classification performance with confusion matrix',
-    icon: Icons.ConfusionMatrixIcon,
+    icon: 'ConfusionMatrixIcon',
     inputs: [
       { id: 'predictions', name: 'Predictions', type: 'DataTable' },
       { id: 'actual', name: 'Actual Labels', type: 'DataTable' }
@@ -701,7 +768,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Evaluate',
     type: 'rocAnalysis',
     description: 'Generate ROC curves and calculate AUC for classifier evaluation',
-    icon: Icons.HistogramIcon,
+    icon: 'HistogramIcon',
     inputs: [
       { id: 'predictions', name: 'Predictions', type: 'DataTable' },
       { id: 'actual', name: 'Actual Labels', type: 'DataTable' }
@@ -753,7 +820,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Evaluate',
     type: 'crossValidation',
     description: 'Evaluate model performance using k-fold cross-validation',
-    icon: Icons.ROCAnalysisIcon,
+    icon: 'ROCAnalysisIcon',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' },
       { id: 'model', name: 'Model', type: 'AnyModel' }
@@ -823,7 +890,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Unsupervised',
     type: 'kMeans',
     description: 'Perform K-Means clustering to group similar data points',
-    icon: Icons.KMeansIcon,
+    icon: 'KMeansIcon',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -898,7 +965,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Unsupervised',
     type: 'hierarchicalClustering',
     description: 'Build hierarchical clusters using agglomerative approach',
-    icon: Icons.HierarchicalClusteringIcon,
+    icon: 'HierarchicalClusteringIcon',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -967,7 +1034,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Unsupervised',
     type: 'pca',
     description: 'Reduce dimensionality using Principal Component Analysis',
-    icon: Icons.PCAIcon,
+    icon: 'PCAIcon',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -1043,7 +1110,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Unsupervised',
     type: 'dbscan',
     description: 'Density-Based Spatial Clustering with Noise detection',
-    icon: Icons.DBSCANIcon,
+    icon: 'DBSCANIcon',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],

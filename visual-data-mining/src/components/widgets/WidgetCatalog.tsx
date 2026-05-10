@@ -3,7 +3,7 @@
  */
 
 import React, { useState } from 'react';
-import { getAllWidgets, getWidgetsByCategory } from '../../data/widgetRegistry';
+import { getAllWidgets, getWidgetsByCategory, getIconByName } from '../../data/widgetRegistry';
 import { CubeIcon } from '../../components/icons';
 import type { WidgetMCJAMetadata } from '../../types/mcja';
 import './WidgetCatalog.css';
@@ -39,12 +39,12 @@ export const WidgetCatalog: React.FC<WidgetCatalogProps> = ({ onAddWidget }) => 
   const getCategoryIcon = (category: string): string => {
     const icons: Record<string, string> = {
       Data: 'TableIcon',
-      Visualize: 'ChartIcon',
-      Model: '🤖',
-      Evaluate: 'TargetIcon',
-      Unsupervised: '🔍'
+      Visualize: 'ScatterPlotIcon',
+      Model: 'LinearRegressionIcon',
+      Evaluate: 'TestScoreIcon',
+      Unsupervised: 'KMeansIcon'
     };
-    return icons[category] || '📦';
+    return icons[category] || 'FileIcon';
   };
 
   return (
@@ -67,36 +67,44 @@ export const WidgetCatalog: React.FC<WidgetCatalogProps> = ({ onAddWidget }) => 
 
       {/* Category Filter */}
       <div className="catalog-categories">
-        {categories.map(cat => (
-          <button
-            key={cat}
-            className={`cat-btn ${selectedCategory === cat ? 'active' : ''}`}
-            onClick={() => setSelectedCategory(cat)}
-          >
-            {getCategoryIcon(cat)} {cat}
-          </button>
-        ))}
+        {categories.map(cat => {
+          const CatIcon = getIconByName(getCategoryIcon(cat));
+          return (
+            <button
+              key={cat}
+              className={`cat-btn ${selectedCategory === cat ? 'active' : ''}`}
+              onClick={() => setSelectedCategory(cat)}
+            >
+              {CatIcon && <CatIcon className="w-4 h-4" />} {cat}
+            </button>
+          );
+        })}
       </div>
 
       {/* Widgets List */}
       <div className="catalog-widgets">
-        {filteredWidgets.map(widget => (
-          <div
-            key={widget.type}
-            className="catalog-widget-item"
-            onClick={() => onAddWidget(widget.type)}
-            title={widget.description}
-          >
-            <div className="widget-item-icon">{widget.icon}</div>
-            <div className="widget-item-info">
-              <span className="widget-item-name">{widget.menu}</span>
-              <span className={`widget-item-category cat-${widget.category.toLowerCase()}`}>
-                {widget.category}
-              </span>
+        {filteredWidgets.map(widget => {
+          const WidgetIcon = getIconByName(widget.icon);
+          return (
+            <div
+              key={widget.type}
+              className="catalog-widget-item"
+              onClick={() => onAddWidget(widget.type)}
+              title={widget.description}
+            >
+              <div className="widget-item-icon">
+                {WidgetIcon ? <WidgetIcon className="w-5 h-5" /> : '📦'}
+              </div>
+              <div className="widget-item-info">
+                <span className="widget-item-name">{widget.menu}</span>
+                <span className={`widget-item-category cat-${widget.category.toLowerCase()}`}>
+                  {widget.category}
+                </span>
+              </div>
+              <div className="widget-item-add">+</div>
             </div>
-            <div className="widget-item-add">+</div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Footer Stats */}

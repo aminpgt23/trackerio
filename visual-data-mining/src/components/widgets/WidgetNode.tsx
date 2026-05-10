@@ -4,7 +4,7 @@
 
 import React, { memo } from 'react';
 import { Handle, Position, NodeProps } from 'reactflow';
-import { getWidgetByType } from '../../data/widgetRegistry';
+import { getWidgetByType, getIconByName } from '../../data/widgetRegistry';
 import './WidgetNode.css';
 
 export interface WidgetNodeData {
@@ -17,6 +17,7 @@ export interface WidgetNodeData {
 
 const WidgetNode: React.FC<NodeProps<WidgetNodeData>> = ({ data, selected }) => {
   const widgetMeta = getWidgetByType(data.widgetType);
+  const IconComponent = getIconByName(data.icon || widgetMeta?.icon);
   
   return (
     <div className={`widget-node ${selected ? 'selected' : ''} ${data.status || ''}`}>
@@ -30,7 +31,9 @@ const WidgetNode: React.FC<NodeProps<WidgetNodeData>> = ({ data, selected }) => 
       
       {/* Node Header */}
       <div className="widget-header">
-        <span className="widget-icon">{data.icon || widgetMeta?.icon || '📦'}</span>
+        <span className="widget-icon">
+          {IconComponent ? <IconComponent className="w-6 h-6" /> : (data.icon || '📦')}
+        </span>
         <div className="widget-title">
           <span className="widget-name">{data.label}</span>
           {widgetMeta && (
