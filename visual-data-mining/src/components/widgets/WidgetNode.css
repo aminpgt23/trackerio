@@ -2,22 +2,22 @@
 
 .widget-node {
   background: white;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  min-width: 200px;
-  min-height: 80px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  min-width: 160px;
+  min-height: 60px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
   position: relative;
 }
 
 .widget-node:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
 }
 
 .widget-node.selected {
   border-color: #3498db;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2), 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2), 0 3px 12px rgba(0, 0, 0, 0.12);
 }
 
 .widget-node.running {
@@ -35,15 +35,15 @@
 .widget-header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px;
+  gap: 6px;
+  padding: 6px 8px;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  border-radius: 6px 6px 0 0;
+  border-radius: 5px 5px 0 0;
   border-bottom: 1px solid #e0e0e0;
 }
 
 .widget-icon {
-  font-size: 1rem;
+  font-size: 12px;
   line-height: 1;
   display: flex;
   align-items: center;
@@ -51,26 +51,26 @@
 }
 
 .widget-icon svg {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
 }
 
 .widget-title {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .widget-name {
   font-weight: 600;
   color: #2c3e50;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .widget-category {
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 10px;
+  font-size: 9px;
+  padding: 1px 4px;
+  border-radius: 8px;
   text-transform: uppercase;
   font-weight: 600;
   display: inline-block;
