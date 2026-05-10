@@ -24,15 +24,15 @@
 }
 
 .react-flow__controls {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
   border: 1px solid #e0e0e0;
 }
 
 .react-flow__controls-button {
   border: none;
   background: white;
-  padding: 8px;
+  padding: 6px;
 }
 
 .react-flow__controls-button:hover {
@@ -41,8 +41,8 @@
 
 .react-flow__minimap {
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .react-flow__background {
@@ -82,7 +82,7 @@
 .workflow-canvas:has(.react-flow__nodes:empty)::after {
   content: '📤 Add widgets from the catalog to start building your workflow';
   color: #7f8c8d;
-  font-size: 1.2rem;
+  font-size: 14px;
   text-align: center;
   padding: 40px;
   background: rgba(255, 255, 255, 0.8);
