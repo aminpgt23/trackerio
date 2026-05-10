@@ -5,6 +5,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { generateMCJARows, getAllWidgets, getWidgetsByCategory } from '../../data/widgetRegistry';
+import { DocumentIcon, GridIcon } from '../../components/icons';
 import type { WidgetMCJAMetadata } from '../../types/mcja';
 import './MCJAViewer.css';
 

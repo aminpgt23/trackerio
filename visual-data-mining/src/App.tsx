@@ -6,6 +6,7 @@ import React, { useState, useCallback } from 'react';
 import { WorkflowCanvas } from './components/canvas/WorkflowCanvas';
 import { WidgetCatalog } from './components/widgets/WidgetCatalog';
 import { MCJAViewer } from './components/mcja/MCJAViewer';
+import { BeakerIcon, GridIcon, DocumentIcon, SettingsIcon } from './components/icons';
 import './App.css';
 
 type ActiveView = 'canvas' | 'mcja';
