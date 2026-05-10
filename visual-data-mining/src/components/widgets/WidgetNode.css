@@ -1,0 +1,208 @@
+/* Widget Node Styles */
+
+.widget-node {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  min-width: 200px;
+  min-height: 80px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.widget-node:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.widget-node.selected {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2), 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.widget-node.running {
+  border-color: #f39c12;
+}
+
+.widget-node.completed {
+  border-color: #27ae60;
+}
+
+.widget-node.error {
+  border-color: #e74c3c;
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 6px 6px 0 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.widget-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.widget-title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.widget-name {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.widget-category {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+  width: fit-content;
+}
+
+.cat-data {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.cat-visualize {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.cat-model {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.cat-evaluate {
+  background: #fce4ec;
+  color: #c2185b;
+}
+
+.cat-unsupervised {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.widget-body {
+  padding: 12px;
+}
+
+.widget-info {
+  margin-bottom: 8px;
+}
+
+.io-ports {
+  display: flex;
+  gap: 12px;
+  justify-content: space-around;
+}
+
+.port-section {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.port-label {
+  font-size: 11px;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.port-count {
+  background: #3498db;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.status-indicator {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.status-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.status-dot.running {
+  background: #f39c12;
+  animation: pulse 1s infinite;
+}
+
+.status-dot.completed {
+  background: #27ae60;
+}
+
+.status-dot.error {
+  background: #e74c3c;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/* ReactFlow Handles */
+.widget-handle {
+  width: 12px !important;
+  height: 12px !important;
+  background: #3498db !important;
+  border: 2px solid white !important;
+  border-radius: 50% !important;
+  transition: all 0.2s;
+}
+
+.widget-handle:hover {
+  background: #2980b9 !important;
+  transform: scale(1.2);
+}
+
+.widget-handle.input {
+  left: -6px !important;
+}
+
+.widget-handle.output {
+  right: -6px !important;
+}
+
+.widget-handle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+}
