@@ -6,6 +6,7 @@ import React, { useState, useCallback } from 'react';
 import { WorkflowCanvas } from './components/canvas/WorkflowCanvas';
 import { WidgetCatalog } from './components/widgets/WidgetCatalog';
 import { MCJAViewer } from './components/mcja/MCJAViewer';
+import { PropertiesPanel } from './components/properties/PropertiesPanel';
 import { BeakerIcon, GridIcon, DocumentIcon, SettingsIcon } from './components/icons';
 import './App.css';
 
@@ -62,26 +63,8 @@ function App() {
             {/* Center - Workflow Canvas */}
             <WorkflowCanvas onAddWidgetFromCatalog={handleAddWidgetFromCatalog} />
             
-            {/* Right Panel - Placeholder for widget properties */}
-            <aside className="properties-panel">
-              <div className="panel-header">
-                <h3><span className="flex items-center gap-2"><SettingsIcon className="w-5 h-5" /> Properties</span></h3>
-              </div>
-              <div className="panel-content">
-                <p className="empty-state">
-                  Select a widget on the canvas to view and edit its properties.
-                </p>
-                <div className="quick-tips">
-                  <h4>Quick Tips:</h4>
-                  <ul>
-                    <li>Add widgets from the catalog to the canvas</li>
-                    <li>Connect outputs to inputs to build workflows</li>
-                    <li>Click on widgets to configure settings</li>
-                    <li>View MCJA docs for complete widget reference</li>
-                  </ul>
-                </div>
-              </div>
-            </aside>
+            {/* Right Panel - Properties Panel with widget settings, data view, and results */}
+            <PropertiesPanel />
           </div>
         ) : (
           <MCJAViewer />
