@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useMemo } from 'react';
-import { generateMCJARows, getAllWidgets, getWidgetsByCategory } from '../../data/widgetRegistry';
+import { generateMCJARows, getAllWidgets, getWidgetsByCategory, getIconByName } from '../../data/widgetRegistry';
 import { DocumentIcon, GridIcon } from '../../components/icons';
 import type { WidgetMCJAMetadata } from '../../types/mcja';
 import './MCJAViewer.css';
@@ -172,10 +172,14 @@ export const MCJAViewer: React.FC = () => {
         </div>
       ) : (
         <div className="mcja-widgets-grid">
-          {filteredWidgets.map(widget => (
+          {filteredWidgets.map(widget => {
+            const IconComponent = getIconByName(widget.icon);
+            return (
             <div key={widget.type} className="widget-card">
               <div className="widget-header">
-                <span className="widget-icon">{widget.icon}</span>
+                <span className="widget-icon">
+                  {IconComponent ? <IconComponent className="w-6 h-6" /> : '📦'}
+                </span>
                 <div>
                   <h3>{widget.menu}</h3>
                   <span className={`category-badge cat-${widget.category.toLowerCase()}`}>
@@ -224,7 +228,8 @@ export const MCJAViewer: React.FC = () => {
                 </div>
               </div>
             </div>
-          ))}
+          );
+          })}
         </div>
       )}
 

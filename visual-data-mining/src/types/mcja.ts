@@ -55,8 +55,8 @@ export interface WidgetMCJAMetadata {
     name: string;
     type: string;
   }[];
-  /** Icon component */
-  icon?: React.FC<{ className?: string }>;
+  /** Icon component name (string identifier) */
+  icon?: string;
 }
 
 /**
