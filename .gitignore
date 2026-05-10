@@ -17,7 +17,11 @@ env/
 venv/
 .venv/
 .ENV
-.ENV.local
+.python-version
+.pytest_cache/
+.mypy_cache/
+.coverage
+coverage/
 
 # Logs
 *.log
@@ -26,26 +30,20 @@ venv/
 .env
 .env.local
 .env.*
+!.env.example
 
-# IDE files
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-*.tmp
+*~
 
-# OS generated files
+# OS
 .DS_Store
 Thumbs.db
 
-# Testing
-.coverage
-coverage/
-htmlcov/
-.pytest_cache/
-.mypy_cache/
-
-# Compressed files
+# Compression
 *.zip
 *.gz
 *.tar
@@ -64,4 +62,8 @@ htmlcov/
 *.Z
 *.lz
 *.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
 ```
