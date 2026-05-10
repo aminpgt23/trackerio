@@ -17,9 +17,7 @@ env/
 venv/
 .venv/
 .ENV
-.ENV.*
-.venv.bak/
-venv.bak/
+.ENV.local
 
 # Logs
 *.log
@@ -36,14 +34,16 @@ venv.bak/
 *.swo
 *.tmp
 
-# Coverage reports
-coverage/
-htmlcov/
-.coverage
-
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Testing
+.coverage
+coverage/
+htmlcov/
+.pytest_cache/
+.mypy_cache/
 
 # Compressed files
 *.zip
@@ -64,25 +64,4 @@ Thumbs.db
 *.Z
 *.lz
 *.lzo
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.tar.zst
-
-# MyPy cache
-.mypy_cache/
-.pytest_cache/
-
-# Gradle
-.gradle/
-
-# Compiled files
-*.class
-*.o
-*.exe
-*.dll
-*.so
-*.a
-*.obj
-*.out
 ```

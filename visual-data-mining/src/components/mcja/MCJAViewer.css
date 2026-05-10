@@ -1,61 +1,61 @@
 /* MCJA Viewer Styles */
 
 .mcja-viewer {
-  padding: 12px;
+  padding: 8px;
   max-width: 1400px;
   margin: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .mcja-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .mcja-header h1 {
   color: #2c3e50;
-  font-size: 18px;
-  margin-bottom: 6px;
+  font-size: 14px;
+  margin-bottom: 4px;
 }
 
 .mcja-subtitle {
   color: #7f8c8d;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 /* Controls */
 .mcja-controls {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   background: #f8f9fa;
-  padding: 12px;
-  border-radius: 6px;
-  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
 }
 
 .mcja-filters,
 .mcja-search {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .mcja-filters label {
   font-weight: 600;
   color: #2c3e50;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .mcja-select,
 .mcja-input {
-  padding: 6px 10px;
+  padding: 4px 8px;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 12px;
+  border-radius: 3px;
+  font-size: 10px;
   background: white;
 }
 
@@ -67,23 +67,23 @@
 }
 
 .mcja-input {
-  width: 200px;
+  width: 150px;
 }
 
 .mcja-view-toggle {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .mcja-view-toggle button {
-  padding: 6px 12px;
+  padding: 4px 10px;
   border: 2px solid #3498db;
   background: white;
   color: #3498db;
-  border-radius: 4px;
+  border-radius: 3px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 10px;
   transition: all 0.2s;
 }
 
@@ -99,28 +99,28 @@
 /* Statistics */
 .mcja-stats {
   display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 15px;
 }
 
 .stat-card {
   flex: 1;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 12px;
-  border-radius: 8px;
+  padding: 8px;
+  border-radius: 6px;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .stat-value {
   display: block;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .stat-label {
-  font-size: 10px;
+  font-size: 9px;
   opacity: 0.9;
 }
 
@@ -128,20 +128,20 @@
 .mcja-table-container {
   overflow-x: auto;
   background: white;
-  border-radius: 6px;
+  border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .mcja-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 11px;
+  font-size: 9px;
 }
 
 .mcja-table th {
   background: #2c3e50;
   color: white;
-  padding: 8px 10px;
+  padding: 6px 8px;
   text-align: left;
   font-weight: 600;
   position: sticky;
@@ -149,7 +149,7 @@
 }
 
 .mcja-table td {
-  padding: 8px 10px;
+  padding: 6px 8px;
   border-bottom: 1px solid #ecf0f1;
   vertical-align: top;
 }
@@ -161,7 +161,7 @@
 .widget-name {
   font-weight: 600;
   color: #2c3e50;
-  min-width: 120px;
+  min-width: 100px;
 }
 
 .command-name {
@@ -171,9 +171,9 @@
 
 .category-badge {
   display: inline-block;
-  padding: 3px 8px;
-  border-radius: 12px;
-  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 8px;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -205,17 +205,17 @@
 
 .command-type {
   display: inline-block;
-  padding: 3px 8px;
+  padding: 2px 6px;
   background: #ecf0f1;
-  border-radius: 4px;
-  font-size: 12px;
+  border-radius: 3px;
+  font-size: 9px;
   font-family: monospace;
   color: #2c3e50;
 }
 
 .job-desc {
   color: #34495e;
-  max-width: 300px;
+  max-width: 250px;
 }
 
 .action-output {
@@ -225,58 +225,59 @@
 
 .no-results {
   text-align: center;
-  padding: 40px;
+  padding: 30px;
   color: #7f8c8d;
-  font-size: 1.1rem;
+  font-size: 10px;
 }
 
 /* Widgets Grid View */
 .mcja-widgets-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
 }
 
 .widget-card {
   background: white;
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 8px;
+  padding: 15px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #3498db;
+  border-left: 3px solid #3498db;
 }
 
 .widget-header {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
 .widget-icon {
-  font-size: 2.5rem;
+  font-size: 18px;
 }
 
 .widget-header h3 {
   margin: 0;
   color: #2c3e50;
-  font-size: 1.3rem;
+  font-size: 11px;
 }
 
 .widget-description {
   color: #7f8c8d;
-  margin-bottom: 15px;
-  line-height: 1.5;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  font-size: 9px;
 }
 
 .widget-io {
   background: #f8f9fa;
-  padding: 15px;
-  border-radius: 6px;
-  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
 }
 
 .io-section {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .io-section:last-child {
@@ -284,60 +285,61 @@
 }
 
 .io-section ul {
-  margin: 5px 0 0 20px;
+  margin: 4px 0 0 15px;
   padding: 0;
 }
 
 .io-section li {
   color: #34495e;
-  font-size: 13px;
+  font-size: 9px;
 }
 
 .widget-commands h4 {
   color: #2c3e50;
-  margin-bottom: 15px;
-  font-size: 1rem;
+  margin-bottom: 12px;
+  font-size: 9px;
 }
 
 .commands-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .command-item {
   background: #f8f9fa;
-  padding: 12px;
-  border-radius: 6px;
-  border-left: 3px solid #3498db;
+  padding: 10px;
+  border-radius: 4px;
+  border-left: 2px solid #3498db;
 }
 
 .command-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .command-name-small {
   font-weight: 600;
   color: #2c3e50;
+  font-size: 9px;
 }
 
 .command-type-small {
   background: #3498db;
   color: white;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 8px;
   text-transform: uppercase;
 }
 
 .command-job,
 .command-action {
-  margin: 5px 0;
-  font-size: 13px;
-  line-height: 1.4;
+  margin: 4px 0;
+  font-size: 9px;
+  line-height: 1.3;
 }
 
 .command-job {
@@ -350,12 +352,13 @@
 
 /* Footer */
 .mcja-footer {
-  margin-top: 30px;
-  padding: 20px;
+  margin-top: 20px;
+  padding: 15px;
   background: #f8f9fa;
-  border-radius: 8px;
+  border-radius: 6px;
   text-align: center;
   color: #7f8c8d;
+  font-size: 9px;
 }
 
 /* Responsive */
@@ -382,11 +385,11 @@
   }
 
   .mcja-table {
-    font-size: 12px;
+    font-size: 9px;
   }
 
   .mcja-table th,
   .mcja-table td {
-    padding: 8px 10px;
+    padding: 6px 8px;
   }
 }
