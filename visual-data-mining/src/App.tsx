@@ -29,7 +29,7 @@ function App() {
       {/* Header */}
       <header className="app-header">
         <div className="header-logo">
-          <span className="logo-icon">🔬</span>
+          <span className="logo-icon"><BeakerIcon className="w-8 h-8" /></span>
           <h1>Visual Data Mining</h1>
         </div>
         <nav className="header-nav">
@@ -37,13 +37,13 @@ function App() {
             className={`nav-btn ${activeView === 'canvas' ? 'active' : ''}`}
             onClick={() => setActiveView('canvas')}
           >
-            🎨 Workflow Canvas
+            <span className="flex items-center gap-2"><GridIcon className="w-5 h-5" /> Workflow Canvas</span>
           </button>
           <button
             className={`nav-btn ${activeView === 'mcja' ? 'active' : ''}`}
             onClick={() => setActiveView('mcja')}
           >
-            📋 MCJA Documentation
+            <span className="flex items-center gap-2"><DocumentIcon className="w-5 h-5" /> MCJA Documentation</span>
           </button>
         </nav>
         <div className="header-info">
@@ -64,7 +64,7 @@ function App() {
             {/* Right Panel - Placeholder for widget properties */}
             <aside className="properties-panel">
               <div className="panel-header">
-                <h3>⚙️ Properties</h3>
+                <h3><span className="flex items-center gap-2"><SettingsIcon className="w-5 h-5" /> Properties</span></h3>
               </div>
               <div className="panel-content">
                 <p className="empty-state">

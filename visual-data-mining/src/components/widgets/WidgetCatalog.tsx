@@ -37,10 +37,10 @@ export const WidgetCatalog: React.FC<WidgetCatalogProps> = ({ onAddWidget }) => 
 
   const getCategoryIcon = (category: string): string => {
     const icons: Record<string, string> = {
-      Data: '📊',
-      Visualize: '📈',
+      Data: 'TableIcon',
+      Visualize: 'ChartIcon',
       Model: '🤖',
-      Evaluate: '🎯',
+      Evaluate: 'TargetIcon',
       Unsupervised: '🔍'
     };
     return icons[category] || '📦';
@@ -49,7 +49,7 @@ export const WidgetCatalog: React.FC<WidgetCatalogProps> = ({ onAddWidget }) => 
   return (
     <div className="widget-catalog">
       <div className="catalog-header">
-        <h2>🧩 Widget Catalog</h2>
+        <h2><span className="flex items-center gap-2"><CubeIcon className="w-6 h-6" /> Widget Catalog</span></h2>
         <p>Add widgets to your workflow</p>
       </div>
 

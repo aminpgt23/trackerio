@@ -4,6 +4,11 @@
  */
 
 import { WidgetMCJAMetadata } from '../types/mcja';
+import {
+  FileIcon, TableIcon, SamplerIcon, ScatterPlotIcon, LineChartIcon, BarChartIcon,
+  LinearRegressionIcon, LogisticRegressionIcon, DecisionTreeIcon, ConfusionMatrixIcon,
+  ROCAnalysisIcon, KMeansIcon, HierarchicalClusteringIcon, PCAIcon, DBSCANIcon
+} from '../components/icons';
 
 /**
  * Complete registry of all available widgets with their MCJA metadata
@@ -17,7 +22,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Data',
     type: 'fileReader',
     description: 'Load data from CSV, Excel, or other file formats into the workflow',
-    icon: '📁',
+    icon: '<FileIcon />',
     inputs: [],
     outputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
@@ -79,7 +84,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Data',
     type: 'dataTable',
     description: 'Display and inspect data in a tabular format',
-    icon: '📊',
+    icon: '<TableIcon />',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -128,7 +133,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Data',
     type: 'dataSampler',
     description: 'Sample a subset of data rows randomly or by fixed interval',
-    icon: '🎲',
+    icon: '<SamplerIcon />',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -189,7 +194,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Visualize',
     type: 'scatterPlot',
     description: 'Create scatter plots to visualize relationships between two variables',
-    icon: '📈',
+    icon: '<ScatterPlotIcon />',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -281,7 +286,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Visualize',
     type: 'lineChart',
     description: 'Create line charts to show trends over time or sequence',
-    icon: '📉',
+    icon: '<LineChartIcon />',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -339,7 +344,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Visualize',
     type: 'barChart',
     description: 'Create bar charts for categorical comparisons',
-    icon: '📊',
+    icon: "<BarChartIcon />",
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -398,7 +403,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Model',
     type: 'linearRegression',
     description: 'Fit a linear regression model to predict continuous target variable',
-    icon: '📐',
+    icon: '<LinearRegressionIcon />',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' },
       { id: 'preprocessor', name: 'Preprocessor', type: 'Preprocessor',  }
@@ -480,7 +485,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Model',
     type: 'logisticRegression',
     description: 'Fit a logistic regression model for binary classification',
-    icon: '🔀',
+    icon: '<LogisticRegressionIcon />',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -562,7 +567,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Model',
     type: 'decisionTree',
     description: 'Build a decision tree classifier or regressor',
-    icon: '🌳',
+    icon: '<DecisionTreeIcon />',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -642,7 +647,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Evaluate',
     type: 'confusionMatrix',
     description: 'Visualize classification performance with confusion matrix',
-    icon: '🎯',
+    icon: '<ConfusionMatrixIcon />',
     inputs: [
       { id: 'predictions', name: 'Predictions', type: 'DataTable' },
       { id: 'actual', name: 'Actual Labels', type: 'DataTable' }
@@ -699,7 +704,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Evaluate',
     type: 'rocAnalysis',
     description: 'Generate ROC curves and calculate AUC for classifier evaluation',
-    icon: '📊',
+    icon: "<HistogramIcon />",
     inputs: [
       { id: 'predictions', name: 'Predictions', type: 'DataTable' },
       { id: 'actual', name: 'Actual Labels', type: 'DataTable' }
@@ -751,7 +756,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Evaluate',
     type: 'crossValidation',
     description: 'Evaluate model performance using k-fold cross-validation',
-    icon: '🔄',
+    icon: '<ROCAnalysisIcon />',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' },
       { id: 'model', name: 'Model', type: 'AnyModel' }
@@ -821,7 +826,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Unsupervised',
     type: 'kMeans',
     description: 'Perform K-Means clustering to group similar data points',
-    icon: '🔵',
+    icon: '<KMeansIcon />',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -896,7 +901,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Unsupervised',
     type: 'hierarchicalClustering',
     description: 'Build hierarchical clusters using agglomerative approach',
-    icon: '🌲',
+    icon: '<HierarchicalClusteringIcon />',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -965,7 +970,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Unsupervised',
     type: 'pca',
     description: 'Reduce dimensionality using Principal Component Analysis',
-    icon: '🔽',
+    icon: '<PCAIcon />',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
@@ -1041,7 +1046,7 @@ export const widgetRegistry: Record<string, WidgetMCJAMetadata> = {
     category: 'Unsupervised',
     type: 'dbscan',
     description: 'Density-Based Spatial Clustering with Noise detection',
-    icon: '⚡',
+    icon: '<DBSCANIcon />',
     inputs: [
       { id: 'data', name: 'Data', type: 'DataTable' }
     ],
