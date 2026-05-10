@@ -35,16 +35,24 @@
 .widget-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px;
+  gap: 8px;
+  padding: 10px;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   border-radius: 6px 6px 0 0;
   border-bottom: 1px solid #e0e0e0;
 }
 
 .widget-icon {
-  font-size: 1.8rem;
+  font-size: 1rem;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.widget-icon svg {
+  width: 16px;
+  height: 16px;
 }
 
 .widget-title {
